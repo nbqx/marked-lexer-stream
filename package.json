@@ -1,0 +1,25 @@
+{
+  "name": "marked-lexer-stream",
+  "description": "marked lexer stream",
+  "version": "0.0.1",
+  "author": "nbqx",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nbqx/marked-lexer-stream.git"
+  },
+  "homepage": "https://github.com/nbqx/marked-lexer-stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^0.3.2",
+    "lodash": "^2.4.1",
+    "event-stream": "^3.1.5",
+    "through2": "^0.4.1"
+  },
+  "devDependencies": {
+    "tap": "^0.4.8"
+  }
+}
