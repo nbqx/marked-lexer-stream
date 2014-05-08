@@ -17,3 +17,11 @@ test('data is object',function(t){
     t.end();
   });
 });
+
+test('marked option',function(t){
+  var mdPath = __dirname+'/../'+'README.md';
+  var opts = {gfm:false};
+  var s = marked_lexer_stream(mdPath,opts);
+  t.deepEqual(opts,{gfm:false});
+  t.end();
+});

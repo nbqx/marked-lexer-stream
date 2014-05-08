@@ -4,8 +4,8 @@ var through2 = require('through2'),
     marked = require('marked'),
     _ = require('lodash');
 
-module.exports = function(path,opts){
-  opts = {gfm: true};
+function MarkedLexerStream(path,opts){
+  opts = _.defaults({gfm: true},opts);
   var src = fs.readFileSync(path)+'';
   var lexer = marked.lexer(src,opts);
   var array = es.readArray(lexer);
@@ -23,6 +23,7 @@ module.exports = function(path,opts){
     next();
   },function end(){
     if(!_.isEmpty(buf)){
+      buf.links = links;
       this.push(buf);
     }
     this.push(null);
@@ -30,3 +31,5 @@ module.exports = function(path,opts){
 
   return array.pipe(transform)
 };
+
+module.exports = MarkedLexerStream;
